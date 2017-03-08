@@ -173,3 +173,21 @@ func Postgrid(c *gin.Context){
 // 		c.JSON(404,gin.H{"error":"no registros(s) en la tabla"})
 // 	}
 // }
+
+func Getnumcodigooperacionmaestra(c *gin.Context){
+	numcodopmaestra,err := datos.Getnumcodigooperacionmaestra(c)
+	if err == nil{
+		c.JSON(200,numcodopmaestra)
+	}else{
+		c.JSON(400,gin.H{"error":"no registros en la tabla"})
+	}
+}
+
+func Nuevocontenido(c *gin.Context){
+	insertcontenido,err := datos.Nuevocontenido(c)
+	if err == nil{
+			c.JSON(200, insertcontenido)
+		}else {
+			c.JSON(404, gin.H{"error": "no registros(s) en la tabla"})
+		}
+}

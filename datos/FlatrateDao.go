@@ -406,3 +406,30 @@ func DeleteContenido(c *gin.Context) {
 // 	// c.JSON(200, gin.H{"nummaestra #" + nummaestra: " eliminado"})
 
 // }
+
+//estas funciones son para los servicios preventivos
+func Getnumcodigooperacionmaestra(c *gin.Context)([]bean.Numcodigooperacionmaestra,error){
+	var numcodopmaestra []bean.Numcodigooperacionmaestra
+
+	_,err := utils.DbmapOracle.Select(&numcodopmaestra,"SELECT MAX(NUMCODIGOOPERACIONMAESTRA) + 1 NUMCODIGOOPERACIONMAESTRA FROM  OPERACIONSERVICIOSCONTENIDOS")
+	if err != nil {
+		log.Println("error")
+		log.Println(err)
+		return nil,err
+	}
+	return numcodopmaestra,nil
+}
+
+func Nuevocontenido(c *gin.Context)(bean.Nuevocontenido,error){
+	var insertcontenido bean.Nuevocontenido
+	c.Bind(&insertcontenido)
+	_, err := utils.DbmapOracle.Exec(`INSERT INTO OPERACIONSERVICIOSCONTENIDOS(NUMCODIGOOPERACIONMAESTRA,VCHOPERACIONMAESTRA,VCHCODIGOOPERACION,
+                                               CHRCODIGOOPERACIONSERVICIO,DTEFECHA,CHRESTADO,NUMCODIGOMASTER,NUMCODIGOITEM)
+        VALUES(:NUMCODIGOOPERACIONMAESTRA,:VCHOPERACIONMAESTRA,:VCHCODIGOOPERACION,:CHRCODIGOOPERACIONSERVICIO,:DTEFECHA,:CHRESTADO,:NUMCODIGOMASTER,:NUMCODIGOITEM)`,
+		insertcontenido.NUMCODIGOOPERACIONMAESTRA,insertcontenido.VCHOPERACIONMAESTRA,insertcontenido.VCHCODIGOOPERACION,insertcontenido.CHRCODIGOOPERACIONSERVICIO,time.Now(),insertcontenido.CHRESTADO,insertcontenido.NUMCODIGOMASTER,insertcontenido.NUMCODIGOITEM)
+	if err != nil {
+		log.Println("error")
+		log.Println(err)
+	}
+	return insertcontenido, nil
+}

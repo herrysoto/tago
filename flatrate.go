@@ -50,6 +50,8 @@ func main() {
 		v1.GET("/Getnumcodigoop", controller.Getnumcodigoop)
 		v1.DELETE("/DeleteContenido/:nummaestra", datos.DeleteContenido)
 		v1.PUT("/UpdateGrilla", controller.UpdateGrilla)
+		v1.GET("/Getnumcodigooperacionmaestra", controller.Getnumcodigooperacionmaestra)
+		v1.POST("/Nuevocontenido", controller.Nuevocontenido)
 		// v1.GET("/GetNumMaestra/:operacionmaestra/:codigooperacion/:codoperserv", controller.GetNumMaestra)
 		// v1.PUT("/put/:putOpeSer/:putOpeSer1",controller.PutOperaServi)
 
