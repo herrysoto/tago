@@ -17,4 +17,5 @@ type OperacionServicio struct {
     NUMMANOOBRA float64 `json:"nummanoobra"`
     NUMREPUESTO float64 `json:"numrepuesto"`
     NUMTOTAL float64 `json:"numtotal"`
+    NUMCODIGO float64 `db:"NUMCODIGO" json:"numcodigo"`
 }
