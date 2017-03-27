@@ -183,6 +183,7 @@ func Getnumcodigooperacionmaestra(c *gin.Context){
 	}
 }
 
+//esto sirve para los nuevos contenidos
 func Nuevocontenido(c *gin.Context){
 	insertcontenido,err := datos.Nuevocontenido(c)
 	if err == nil{
