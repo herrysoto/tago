@@ -33,15 +33,15 @@ func main() {
 	r.Use(Cors())
     v1 := r.Group("api/v1")
 	{
-		v1.GET("/firstcombo", controller.Getfirstcombo)
+		v1.GET("/firstcombo", controller.Getfirstcombo)  //java
 		v1.GET("/Getcodigovalidacion/:Codopera/:Codoperaservicio",controller.Getcodigovalidacion)
-		v1.GET("/HorasHombres",controller.GetHorasHombres)
+		v1.GET("/HorasHombres",controller.GetHorasHombres) //java
 		v1.PUT("/PutHorasHombre", controller.PutHorasHombre)
-		v1.GET("/Getnumcodigo",controller.Getnumcodigo)
+		v1.GET("/Getnumcodigo",controller.Getnumcodigo)  //java
 		v1.POST("/PostHorasHombres", controller.PostHorasHombres)
-		v1.GET("/firstcombo2", controller.Getfirstcombo2)
-		v1.GET("/secondcomb/:CodServicio", controller.Getsecondcombo)
-		v1.GET("/grid/:Operserv", controller.Getgrid)
+		v1.GET("/firstcombo2", controller.Getfirstcombo2) 
+		v1.GET("/secondcomb/:CodServicio", controller.Getsecondcombo) //java
+		v1.GET("/grid/:Operserv", controller.Getgrid) //java
 		v1.GET("/BuscarOperServiciosParam/:param", controller.BuscarOperServiciosParam)
 		// v1.GET("/BuscarOperServiciosParam", controller.BuscarOperServiciosParam)
 		v1.GET("/LISTAROPERSERVCONTENIDOS/:param/:param1", controller.LISTAR_OPERSERVCONTENIDOS)

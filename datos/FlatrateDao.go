@@ -11,6 +11,7 @@ import (
 
 
 //Getfirstcombo obtener datos del primer combo
+//YA ESTA PASADO A JAVA
 func Getfirstcombo(c *gin.Context) ([]bean.Servicio,error) {
 
 	var descod []bean.Servicio
@@ -126,6 +127,7 @@ func Getfirstcombo2(c *gin.Context) ([]bean.Servicio,error) {
 }
 
 
+//YA ESTA PASADO A JAVA
 func Getsecondcombo(c *gin.Context) ([]bean.Servicio,error) {
 		CodServicio := c.Params.ByName("CodServicio")
 		var codserv []bean.Servicio
