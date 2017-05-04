@@ -36,7 +36,7 @@ func main() {
 		v1.GET("/firstcombo", controller.Getfirstcombo)  //java
 		v1.GET("/Getcodigovalidacion/:Codopera/:Codoperaservicio",controller.Getcodigovalidacion)//java
 		v1.GET("/HorasHombres",controller.GetHorasHombres) //java
-		v1.PUT("/PutHorasHombre", controller.PutHorasHombre)
+		v1.PUT("/PutHorasHombre", controller.PutHorasHombre)  //java
 		v1.GET("/Getnumcodigo",controller.Getnumcodigo)  //java
 		v1.POST("/PostHorasHombres", controller.PostHorasHombres)
 		v1.GET("/firstcombo2", controller.Getfirstcombo2) //no se hace
@@ -46,10 +46,10 @@ func main() {
 		// v1.GET("/BuscarOperServiciosParam", controller.BuscarOperServiciosParam)
 		v1.GET("/LISTAROPERSERVCONTENIDOS/:param/:param1", controller.LISTAR_OPERSERVCONTENIDOS)//java
 		v1.POST("/post", controller.Postgrid)
-		v1.PUT("/PutOperaServi", controller.PutOperaServi)
+		v1.PUT("/PutOperaServi", controller.PutOperaServi)//java
 		v1.GET("/Getnumcodigoop", controller.Getnumcodigoop)//java
 		v1.DELETE("/DeleteContenido/:nummaestra", datos.DeleteContenido)
-		v1.PUT("/UpdateGrilla", controller.UpdateGrilla)
+		v1.PUT("/UpdateGrilla", controller.UpdateGrilla)//jAVA
 		v1.GET("/Getnumcodigooperacionmaestra", controller.Getnumcodigooperacionmaestra)//java
 		v1.POST("/Nuevocontenido", controller.Nuevocontenido)
 		// v1.GET("/GetNumMaestra/:operacionmaestra/:codigooperacion/:codoperserv", controller.GetNumMaestra)
